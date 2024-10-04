@@ -1,0 +1,83 @@
+<!-- myapp/templates/myapp/send_email_form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #162447;
+            border-radius: 10px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            max-width: 450px;
+            width: 100%;
+            color: #e0e0e0;
+        }
+        .container h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #e94560;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        input, textarea {
+            background-color: #0f3460;
+            color: #e0e0e0;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1rem;
+        }
+        input::placeholder, textarea::placeholder {
+            color: #888;
+        }
+        input:focus, textarea:focus {
+            outline: 2px solid #e94560;
+        }
+        button {
+            padding: 12px;
+            background-color: #e94560;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #d33f50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Kamaraj College of Engineering and Technology</h2>
+        <h2>Web Applications using Django Framework</h2>
+        <h2>Mottaya Samy.K</h2>
+        <h2>Send Email Using Django</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" placeholder="Message" rows="6" required></textarea>
+            <button type="submit">Send Email</button>
+        </form>
+    </div>
+</body>
+</html>
